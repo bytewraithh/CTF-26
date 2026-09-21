@@ -3,43 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>RE//CTF — Reverse Engineering Round 1</title>
-  <meta name="description" content="RE//CTF — 80-minute reverse engineering competition. Five multi-stage binary challenges.">
+
+  <meta
+    name="description"
+    content="RE//CTF — 60-minute reverse engineering competition. Five multi-stage binary challenges."
+  >
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <div class="grid"></div>
+
 <header class="nav">
-  <a class="logo" href="#top"><span>$</span> RE<span>//</span>CTF</a>
+
+  <a class="logo" href="#top">
+    <span>$</span> RE<span>//</span>CTF
+  </a>
+
   <nav>
     <a href="#challenges">Challenges</a>
     <a href="#rules">Rules</a>
-    <a href="#tools">Tools</a>
     <a href="#submit">Submit</a>
   </nav>
-  <a class="nav-btn" href="#challenges">ENTER ROUND</a>
+
+  <a class="nav-btn" href="#challenges">
+    ENTER ROUND
+  </a>
+
 </header>
 
+
 <main id="top">
+
+  <!-- HERO -->
   <section class="hero">
+
     <div class="hero-left">
-      <p class="eyebrow">IIT ROORKEE • REVERSE ENGINEERING</p>
-      <h1>Break the<br><em>binary.</em></h1>
-      <p class="lead">Five multi-stage crackmes. Multiple tools. Concrete intermediate discoveries. AI is allowed — but the evidence still has to come from the binary.</p>
+
+      <p class="eyebrow">
+        MMIT • REVERSE ENGINEERING
+      </p>
+
+      <h1>
+        Break the<br>
+        <em>binary.</em>
+      </h1>
+
+      <p class="lead">
+        Five multi-stage crackmes. Concrete intermediate discoveries.
+        AI is allowed — but the evidence still has to come from the binary.
+      </p>
+
       <div class="hero-actions">
-        <a class="cta" href="#challenges">VIEW CHALLENGES <b>↘</b></a>
-        <a class="text-link" href="#rules">READ RULES</a>
+
+        <a class="cta" href="#challenges">
+          VIEW CHALLENGES <b>↘</b>
+        </a>
+
+        <a class="text-link" href="#rules">
+          READ RULES
+        </a>
+
       </div>
+
+
       <div class="facts">
-        <div><strong>80</strong><span>MINUTES</span></div>
-        <div><strong>700</strong><span>POINTS</span></div>
-        <div><strong>05</strong><span>CHALLENGES</span></div>
-        <div><strong>AI</strong><span>ALLOWED</span></div>
+
+        <div>
+          <strong>60</strong>
+          <span>MINUTES</span>
+        </div>
+
+        <div>
+          <strong>700</strong>
+          <span>POINTS</span>
+        </div>
+
+        <div>
+          <strong>05</strong>
+          <span>CHALLENGES</span>
+        </div>
+
+        <div>
+          <strong>AI</strong>
+          <span>ALLOWED</span>
+        </div>
+
       </div>
+
     </div>
+
+
     <div class="hero-right">
+
       <div class="terminal">
-        <div class="term-bar"><span class="dots">● ● ●</span><span>reveng@ctf:~</span><span>LIVE</span></div>
+
+        <div class="term-bar">
+
+          <span class="dots">
+            ● ● ●
+          </span>
+
+          <span>
+            reveng@ctf:~
+          </span>
+
+          <span>
+            LIVE
+          </span>
+
+        </div>
+
+
         <pre id="term">$ ./round1
 > loading challenge index...
 > anti-guess layers: enabled
@@ -47,54 +126,257 @@
 > source code: not provided
 
 READY_</pre>
+
       </div>
+
+
       <div class="timer-card">
-        <div><span class="tiny">ROUND TIMER</span><strong id="timer">--:--:--</strong></div>
-        <div class="timer-status" id="timerStatus">Configure event start time</div>
+
+        <div>
+
+          <span class="tiny">
+            ROUND TIMER
+          </span>
+
+          <strong id="timer">
+            --:--:--
+          </strong>
+
+        </div>
+
+        <div
+          class="timer-status"
+          id="timerStatus"
+        >
+          Configure event start time
+        </div>
+
       </div>
+
     </div>
+
   </section>
+
+
+
+  <!-- CHALLENGES -->
 
   <section class="section" id="challenges">
-    <div class="section-title"><p class="eyebrow">01 / CHALLENGES</p><h2>Five ways to <em>reverse</em> a program.</h2></div>
-    <div class="challenge-grid" id="challengeGrid"></div>
+
+    <div class="section-title">
+
+      <p class="eyebrow">
+        01 / CHALLENGES
+      </p>
+
+      <h2>
+        Five ways to <em>reverse</em> a program.
+      </h2>
+
+    </div>
+
+
+    <div
+      class="challenge-grid"
+      id="challengeGrid"
+    ></div>
+
   </section>
 
-  <section class="section split" id="rules">
-    <div class="section-title"><p class="eyebrow">02 / RULES</p><h2>Use your tools.<br><em>Show your work.</em></h2></div>
+
+
+  <!-- RULES -->
+
+  <section
+    class="section split"
+    id="rules"
+  >
+
+    <div class="section-title">
+
+      <p class="eyebrow">
+        02 / RULES
+      </p>
+
+      <h2>
+        Use your tools.<br>
+        <em>Show your work.</em>
+      </h2>
+
+    </div>
+
+
     <div class="rule-list">
-      <div class="rule"><span>01</span><div><h3>AI + INTERNET</h3><p>Both are allowed. Search, ask models, read documentation and use normal CTF resources.</p></div></div>
-      <div class="rule"><span>02</span><div><h3>ANY NORMAL TOOL</h3><p>x64dbg, Ghidra, IDA, PE-bear, Detect It Easy, Wireshark, Python, CyberChef, 7-Zip and similar tools are allowed.</p></div></div>
-      <div class="rule"><span>03</span><div><h3>NO SOURCE CODE</h3><p>The participant package contains only the intended challenge artifacts. Do not modify, redistribute or attack the hosting infrastructure.</p></div></div>
-      <div class="rule"><span>04</span><div><h3>CHECKPOINTS MATTER</h3><p>For multi-stage problems, intermediate discoveries may be required for scoring. The final flag is not the only evidence of a solve.</p></div></div>
-    </div>
-  </section>
 
-  <section class="section tools" id="tools">
-    <div class="section-title"><p class="eyebrow">03 / TOOLKIT</p><h2>Suggested tools.<br><em>Nothing mandatory.</em></h2></div>
-    <div class="tool-grid">
-      <div class="tool"><b>DEBUG</b><span>x64dbg</span><small>Runtime state, breakpoints, registers</small></div>
-      <div class="tool"><b>PE</b><span>Detect It Easy / PE-bear</span><small>Sections, resources, overlays</small></div>
-      <div class="tool"><b>NETWORK</b><span>Wireshark</span><small>Traffic reconstruction</small></div>
-      <div class="tool"><b>SCRIPT</b><span>Python</span><small>Invert transformations</small></div>
-      <div class="tool"><b>DECODE</b><span>CyberChef</span><small>Quick byte/encoding experiments</small></div>
-      <div class="tool"><b>ARCHIVE</b><span>7-Zip</span><small>Extract embedded artifacts</small></div>
-    </div>
-  </section>
 
-  <section class="section submit-section" id="submit">
-    <div class="submit-box">
-      <div><p class="eyebrow">04 / SUBMISSION</p><h2>Ready to submit?</h2><p>Use the official submission portal for flags and checkpoint values. This public page intentionally keeps answers out of the browser.</p></div>
-      <div class="submit-actions">
-        <a class="cta" id="submitBtn" href="#" target="_blank" rel="noopener">SUBMISSION PORTAL ↗</a>
-        <a class="text-link" id="regBtn" href="#" target="_blank" rel="noopener">REGISTRATION ↗</a>
+      <div class="rule">
+
+        <span>01</span>
+
+        <div>
+
+          <h3>
+            AI + INTERNET
+          </h3>
+
+          <p>
+            Both are allowed. Search, ask models,
+            read documentation and use normal CTF resources.
+          </p>
+
+        </div>
+
       </div>
+
+
+
+      <div class="rule">
+
+        <span>02</span>
+
+        <div>
+
+          <h3>
+            FLEXIBLE TOOLING
+          </h3>
+
+          <p>
+            Use any normal software or analysis method.
+            No specific tool is required.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="rule">
+
+        <span>03</span>
+
+        <div>
+
+          <h3>
+            NO SOURCE CODE
+          </h3>
+
+          <p>
+            The participant package contains only the intended
+            challenge artifacts. Do not modify, redistribute
+            or attack the hosting infrastructure.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="rule">
+
+        <span>04</span>
+
+        <div>
+
+          <h3>
+            CHECKPOINTS MATTER
+          </h3>
+
+          <p>
+            For multi-stage problems, intermediate discoveries
+            may be required for scoring. The final flag is not
+            the only evidence of a solve.
+          </p>
+
+        </div>
+
+      </div>
+
+
     </div>
+
   </section>
+
+
+
+  <!-- SUBMISSION -->
+
+  <section
+    class="section submit-section"
+    id="submit"
+  >
+
+    <div class="submit-box">
+
+      <div>
+
+        <p class="eyebrow">
+          03 / SUBMISSION
+        </p>
+
+        <h2>
+          Ready to submit?
+        </h2>
+
+        <p>
+          Use the official submission portal for flags
+          and checkpoint values. This public page intentionally
+          keeps answers out of the browser.
+        </p>
+
+      </div>
+
+
+      <div class="submit-actions">
+
+        <a
+          class="cta"
+          id="submitBtn"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          SUBMISSION PORTAL ↗
+        </a>
+
+
+        <a
+          class="text-link"
+          id="regBtn"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          REGISTRATION ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
 </main>
 
-<footer><span>RE//CTF • ROUND 1</span><span>Reverse responsibly.</span></footer>
+
+
+<footer>
+
+  <span>
+    RE//CTF • ROUND 1
+  </span>
+
+  <span>
+    Reverse responsibly.
+  </span>
+
+</footer>
+
+
+
 <script src="config.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
